@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phonebook.ViewController">
+    <children>
+        <Label fx:id="label" layoutX="219.0" layoutY="14.0" minHeight="16" minWidth="69" prefHeight="34.0" prefWidth="163.0" text="Telefonkönyv">
+         <font>
+            <Font name="Mongolian Baiti" size="27.0" />
+         </font></Label>
+      <SplitPane id="mainSplit" fx:id="mainSplit" dividerPositions="0.29797979797979796" layoutY="64.0" prefHeight="586.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="584.0" prefWidth="200.0">
+               <children>
+                  <StackPane id="menuPane" fx:id="menuPane" prefHeight="584.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="0.0">
+               <children>
+                  <Pane id="exportPane" fx:id="exportPane" prefHeight="584.0" prefWidth="417.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button id="exportButton" fx:id="exportButton" onAction="#exPortPDf" layoutX="166.0" layoutY="267.0" mnemonicParsing="false" text="PDF mentése" />
+                        <TextField id="inputExport" fx:id="inputExport" layoutX="73.0" layoutY="219.0" prefHeight="25.0" prefWidth="272.0" />
+                        <Label layoutX="166.0" layoutY="183.0" prefHeight="36.0" prefWidth="124.0" text="Fájl Neve:">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="72.0" layoutY="25.0" text="Exportálás PDF-be">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+                  <Pane id="contactPane" fx:id="contactPane" prefHeight="584.0" prefWidth="417.0">
+                     <children>
+                        <TableView id="table" fx:id="table" editable="true" layoutY="-1.0" prefHeight="450.0" prefWidth="570.0">
+                          <columns>
+                          </columns>
+                        </TableView>
+                        <TextField id="inputLastname" fx:id="inputLastname" layoutX="113.0" layoutY="460.0" promptText="Kovács" />
+                        <TextField id="inputFirstname" fx:id="inputFirstname" layoutX="113.0" layoutY="503.0" promptText="Gyula" />
+                        <TextField id="inputEmail" fx:id="inputEmail" layoutX="113.0" layoutY="542.0" promptText="test@gmail.com" />
+                        <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="466.0" text="Vezetéknév:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="509.0" text="Keresztnév:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="62.0" layoutY="546.0" text="Email:" />
+                        <Button id="addNewContentButton" fx:id="addNewContentButton" layoutX="268.0" layoutY="505.0" mnemonicParsing="false" onAction="#addContact" text="Új kontakt hozzáadása" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>
